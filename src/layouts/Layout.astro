@@ -1,0 +1,125 @@
+---
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {}
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: white; }
+    .nav { background: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 50; }
+    .nav-inner { max-width: 1280px; margin: auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { color: #ef4444; font-weight: 900; font-size: 1.2rem; letter-spacing: 0.1em; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: #9ca3af; text-decoration: none; font-size: 0.875rem; }
+    .nav-links a:hover { color: white; }
+    .hero { text-align: center; padding: 96px 16px; border-bottom: 1px solid #1a1a1a; }
+    .badge { color: #ef4444; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 span { color: #ef4444; }
+    .hero p { color: #9ca3af; font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; }
+    .stats { display: flex; justify-content: center; gap: 32px; margin-bottom: 40px; }
+    .stat-num { font-size: 2rem; font-weight: 900; }
+    .stat-label { font-size: 0.7rem; color: #6b7280; margin-top: 4px; }
+    .divider { width: 1px; background: #222; }
+    .btn { background: #dc2626; color: white; font-weight: 700; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-size: 0.875rem; letter-spacing: 0.05em; }
+    .btn:hover { background: #b91c1c; }
+    .section { max-width: 1280px; margin: auto; padding: 80px 16px; }
+    .section-title { font-size: 1.5rem; font-weight: 900; letter-spacing: 0.1em; text-align: center; margin-bottom: 48px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media(min-width: 768px) { .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+    .cat-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; text-align: center; text-decoration: none; display: block; transition: border-color 0.2s; }
+    .cat-card:hover { border-color: #ef4444; }
+    .cat-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .cat-name { font-weight: 700; color: white; }
+    .cat-count { font-size: 0.75rem; color: #6b7280; margin-top: 4px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media(min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .review-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; text-decoration: none; display: block; transition: border-color 0.2s; }
+    .review-card:hover { border-color: #ef4444; }
+    .review-cat { font-size: 0.75rem; color: #ef4444; font-weight: 700; margin-bottom: 8px; }
+    .review-title { font-weight: 900; font-size: 1.1rem; margin-bottom: 12px; color: white; }
+    .review-label { font-size: 0.75rem; color: #6b7280; }
+    .review-pick { color: white; font-weight: 700; }
+    .review-price { color: #f87171; font-weight: 700; margin-top: 4px; }
+    .trust { border-top: 1px solid #1a1a1a; }
+    .trust-grid { display: grid; grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    @media(min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
+    .trust-icon { font-size: 2rem; margin-bottom: 12px; color: #ef4444; }
+    .trust-title { font-weight: 900; font-size: 1.1rem; margin-bottom: 8px; }
+    .trust-text { color: #9ca3af; font-size: 0.875rem; }
+    footer { background: #111; border-top: 1px solid #222; margin-top: 80px; padding: 48px 16px; }
+    .footer-inner { max-width: 1280px; margin: auto; display: grid; grid-template-columns: 1fr; gap: 40px; }
+    @media(min-width: 768px) { .footer-inner { grid-template-columns: repeat(3, 1fr); } }
+    .footer-logo { color: #ef4444; font-weight: 900; font-size: 1.1rem; margin-bottom: 8px; }
+    .footer-text { color: #9ca3af; font-size: 0.875rem; line-height: 1.6; }
+    .footer-heading { color: white; font-weight: 700; margin-bottom: 12px; }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 6px; }
+    .footer-links a { color: #9ca3af; text-decoration: none; font-size: 0.875rem; }
+    .footer-links a:hover { color: white; }
+    .footer-copy { text-align: center; color: #374151; font-size: 0.75rem; margin-top: 40px; }
+    .border-section { border-top: 1px solid #1a1a1a; }
+    .subtitle { color: #6b7280; text-align: center; font-size: 0.875rem; margin-bottom: 48px; margin-top: -32px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo">⚡ KITCHENRANK</a>
+      <div class="nav-links">
+        <a href="/air-fryers">Air Fryers</a>
+        <a href="/mixer-grinders">Mixer Grinders</a>
+        <a href="/pressure-cookers">Pressure Cookers</a>
+        <a href="/water-purifiers">Water Purifiers</a>
+        <a href="/coffee-makers">Coffee Makers</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">⚡ KITCHENRANK</div>
+        <p class="footer-text">India's independent kitchen product reviews. Real testing, honest ratings, verified Amazon.in pricing.</p>
+        <p class="footer-text" style="margin-top:12px; font-size:0.75rem;">KitchenRank participates in the Amazon Associates (India) programme. We may earn a commission when you buy through our links — at no extra cost to you.</p>
+      </div>
+      <div>
+        <div class="footer-heading">CATEGORIES</div>
+        <ul class="footer-links">
+          <li><a href="/air-fryers">Air Fryers</a></li>
+          <li><a href="/mixer-grinders">Mixer Grinders</a></li>
+          <li><a href="/pressure-cookers">Pressure Cookers</a></li>
+          <li><a href="/water-purifiers">Water Purifiers</a></li>
+          <li><a href="/coffee-makers">Coffee Makers</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">COMPANY</div>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/how-we-test">How We Rate</a></li>
+          <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 KitchenRank. All rights reserved.</div>
+  </footer>
+</body>
+</html>

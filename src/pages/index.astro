@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { name: "Air Fryers", slug: "air-fryers", count: 4, icon: "🍟" },
+  { name: "Mixer Grinders", slug: "mixer-grinders", count: 3, icon: "🌀" },
+  { name: "Pressure Cookers", slug: "pressure-cookers", count: 3, icon: "♨️" },
+  { name: "OTG / Microwave", slug: "otg-microwaves", count: 2, icon: "🔆" },
+  { name: "Induction Cooktops", slug: "induction-cooktops", count: 2, icon: "🔥" },
+  { name: "Water Purifiers", slug: "water-purifiers", count: 3, icon: "💧" },
+  { name: "Coffee Makers", slug: "coffee-makers", count: 2, icon: "☕" },
+  { name: "Knives & Choppers", slug: "knives-choppers", count: 2, icon: "🔪" },
+];
+
+const latestReviews = [
+  { category: "Air Fryers", title: "Best Air Fryers Under ₹5,000", slug: "best-air-fryers-under-5000-india", topPick: "Philips HD9252", price: "₹4,499", tested: 6 },
+  { category: "Mixer Grinders", title: "Best Mixer Grinders Under ₹3,000", slug: "best-mixer-grinders-under-3000-india", topPick: "Bajaj Platini PX 65", price: "₹1,899", tested: 5 },
+  { category: "Water Purifiers", title: "Best Water Purifiers Under ₹10,000", slug: "best-water-purifiers-under-10000-india", topPick: "HUL Pureit Eco", price: "₹6,999", tested: 5 },
+];
+---
+
+<Layout title="KitchenRank — India's Best Kitchen Product Reviews" description="India's independent kitchen product reviews.">
+
+  <!-- HERO -->
+  <div style="text-align:center; padding: 96px 24px; border-bottom: 1px solid #1a1a1a;">
+    <div style="color:#ef4444; font-size:0.8rem; font-weight:700; letter-spacing:0.15em; margin-bottom:16px;">INDIA'S #1 KITCHEN GEAR REVIEW SITE</div>
+    <h1 style="font-size:clamp(2rem,6vw,4.5rem); font-weight:900; line-height:1.1; margin-bottom:24px;">
+      WE TEST. <span style="color:#ef4444;">WE RANK.</span><br/>YOU COOK BETTER.
+    </h1>
+    <p style="color:#9ca3af; font-size:1.1rem; max-width:600px; margin:0 auto 40px;">
+      Independent kitchen product reviews for India. Real testing, honest ratings, verified Amazon.in pricing — zero brand deals.
+    </p>
+    <div style="display:flex; justify-content:center; gap:32px; margin-bottom:40px;">
+      <div style="text-align:center;"><div style="font-size:2rem; font-weight:900;">21</div><div style="font-size:0.7rem; color:#6b7280; margin-top:4px;">REVIEWS</div></div>
+      <div style="width:1px; background:#222;"></div>
+      <div style="text-align:center;"><div style="font-size:2rem; font-weight:900;">80+</div><div style="font-size:0.7rem; color:#6b7280; margin-top:4px;">TESTED</div></div>
+      <div style="width:1px; background:#222;"></div>
+      <div style="text-align:center;"><div style="font-size:2rem; font-weight:900;">10pt</div><div style="font-size:0.7rem; color:#6b7280; margin-top:4px;">RATING</div></div>
+    </div>
+    <a href="#categories" style="background:#dc2626; color:white; font-weight:700; padding:12px 32px; border-radius:6px; text-decoration:none; font-size:0.875rem;">BROWSE ALL REVIEWS →</a>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div id="categories" style="max-width:1280px; margin:auto; padding:80px 24px;">
+    <h2 style="font-size:1.5rem; font-weight:900; letter-spacing:0.1em; text-align:center; margin-bottom:48px;">BROWSE BY CATEGORY</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px;">
+      {categories.map(cat => (
+        <a href={`/${cat.slug}`} style="background:#111; border:1px solid #222; border-radius:12px; padding:24px; text-align:center; text-decoration:none; display:block; transition:border-color 0.2s;">
+          <div style="font-size:2.5rem; margin-bottom:12px;">{cat.icon}</div>
+          <div style="font-weight:700; color:white;">{cat.name}</div>
+          <div style="font-size:0.75rem; color:#6b7280; margin-top:4px;">{cat.count} reviews</div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- LATEST REVIEWS -->
+  <div style="max-width:1280px; margin:auto; padding:40px 24px 80px; border-top:1px solid #1a1a1a;">
+    <h2 style="font-size:1.5rem; font-weight:900; letter-spacing:0.1em; text-align:center; margin-bottom:12px;">LATEST REVIEWS</h2>
+    <p style="color:#6b7280; text-align:center; font-size:0.875rem; margin-bottom:48px;">Our most recent in-depth reviews</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:24px;">
+      {latestReviews.map(r => (
+        <a href={`/reviews/${r.slug}`} style="background:#111; border:1px solid #222; border-radius:12px; padding:24px; text-decoration:none; display:block;">
+          <div style="font-size:0.75rem; color:#ef4444; font-weight:700; margin-bottom:8px;">{r.category} · {r.tested} tested</div>
+          <div style="font-weight:900; font-size:1.1rem; margin-bottom:12px; color:white;">{r.title}</div>
+          <div style="font-size:0.75rem; color:#6b7280;">Top Pick</div>
+          <div style="color:white; font-weight:700;">{r.topPick}</div>
+          <div style="color:#f87171; font-weight:700; margin-top:4px;">{r.price}</div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- TRUST -->
+  <div style="max-width:1280px; margin:auto; padding:80px 24px; border-top:1px solid #1a1a1a;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:40px; text-align:center;">
+      <div>
+        <div style="font-size:2rem; color:#ef4444; margin-bottom:12px;">🏆</div>
+        <div style="font-weight:900; font-size:1.1rem; margin-bottom:8px;">RANKINGS BASED ON SPECS</div>
+        <div style="color:#9ca3af; font-size:0.875rem;">Rankings driven purely by specs. No payment changes a product's score.</div>
+      </div>
+      <div>
+        <div style="font-size:2rem; color:#ef4444; margin-bottom:12px;">⭐</div>
+        <div style="font-weight:900; font-size:1.1rem; margin-bottom:8px;">10-POINT RATING</div>
+        <div style="color:#9ca3af; font-size:0.875rem;">Every product scored across weighted criteria — build, performance, value.</div>
+      </div>
+      <div>
+        <div style="font-size:2rem; color:#ef4444; margin-bottom:12px;">₹</div>
+        <div style="font-weight:900; font-size:1.1rem; margin-bottom:8px;">INDIAN PRICING</div>
+        <div style="color:#9ca3af; font-size:0.875rem;">All prices from Amazon.in — verified and updated regularly.</div>
+      </div>
+    </div>
+  </div>
+
+</Layout>

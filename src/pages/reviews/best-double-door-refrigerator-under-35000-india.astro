@@ -1,0 +1,402 @@
+---
+import Layout from '../layouts/Layout.astro1';
+
+const budgetRanges = [
+  {
+    range: "Under ₹25,000",
+    tested: 5,
+    topPick: "Haier 258L",
+    topPickModel: "HRB-2783BS-E",
+    rating: 8.5,
+    price: "₹22,490",
+    description: "Solid frost-free inverter options for couples and small families. Best value-for-money segment.",
+    slug: "best-double-door-refrigerator-under-25000-india",
+    color: "#16a34a",
+  },
+  {
+    range: "Under ₹35,000",
+    tested: 8,
+    topPick: "Samsung 363L",
+    topPickModel: "RT39C553ASL",
+    rating: 9.4,
+    price: "₹32,990",
+    description: "The sweet spot — Twin Cooling, 5-star options, 300L+ capacity from Samsung, LG, and Whirlpool.",
+    slug: "best-double-door-refrigerator-under-35000-india",
+    color: "#f97316",
+  },
+  {
+    range: "Under ₹50,000",
+    tested: 6,
+    topPick: "LG 437L InstaView",
+    topPickModel: "GL-B422EPZX",
+    rating: 9.2,
+    price: "₹46,990",
+    description: "Premium segment with InstaView doors, multi-door options, and advanced smart connectivity.",
+    slug: "best-double-door-refrigerator-under-50000-india",
+    color: "#f97316",
+  },
+];
+
+const allReviews = [
+  {
+    title: "Best Double Door Refrigerator Under ₹35,000",
+    slug: "best-double-door-refrigerator-under-35000-india",
+    topPick: "Samsung 363L RT39C553ASL",
+    price: "₹32,990",
+    rating: 9.4,
+    tested: 8,
+    category: "Under ₹35,000",
+    updated: "June 2026",
+  },
+  {
+    title: "Best Double Door Refrigerator Under ₹25,000",
+    slug: "best-double-door-refrigerator-under-25000-india",
+    topPick: "Haier 258L HRB-2783BS-E",
+    price: "₹22,490",
+    rating: 8.5,
+    tested: 5,
+    category: "Under ₹25,000",
+    updated: "June 2026",
+  },
+  {
+    title: "Best Double Door Refrigerator Under ₹50,000",
+    slug: "best-double-door-refrigerator-under-50000-india",
+    topPick: "LG 437L InstaView",
+    price: "₹46,990",
+    rating: 9.2,
+    tested: 6,
+    category: "Under ₹50,000",
+    updated: "May 2026",
+  },
+];
+
+const guides = [
+  { title: "How to Choose a Double Door Refrigerator in India", slug: "how-to-choose-double-door-refrigerator", read: "10 min read" },
+  { title: "Single Door vs Double Door Refrigerator — Which Should You Buy?", slug: "single-vs-double-door-refrigerator", read: "8 min read" },
+  { title: "5-Star vs 3-Star Refrigerator — Is the Extra Cost Worth It?", slug: "5-star-vs-3-star-refrigerator-india", read: "7 min read" },
+  { title: "Samsung vs LG Refrigerator — Complete Comparison (2026)", slug: "samsung-vs-lg-refrigerator-india", read: "12 min read" },
+];
+
+const faqs = [
+  {
+    q: "Is virtual 7.1 surround sound worth it for gaming?",
+    a: "For FPS and competitive games, virtual 7.1 can help with directional audio cues like footsteps."
+  },
+  {
+    q: "Which is the best double door refrigerator brand in India in 2026?",
+    a: "Samsung and LG are the best overall brands for double door refrigerators in India. Samsung leads on cooling technology (Twin Cooling Plus) and capacity-to-price ratio. LG leads on energy efficiency (5-star ratings) and smart features (ThinQ). Whirlpool is the best for build quality and durability. For budget buyers, Haier offers the best value.",
+  },
+  {
+    q: "What is the ideal refrigerator capacity for a family of 4 in India?",
+    a: "For a family of 4 in India, 300-360 litres is ideal. This gives comfortable space for a week's groceries, a full vegetable crisper, and adequate freezer space. If you buy monthly in bulk or cook large batches, go for 380-420 litres. The Samsung 363L and LG 322L are both perfect for 4-person families.",
+  },
+  {
+    q: "Should I buy a 2-star or 5-star refrigerator?",
+    a: "Always buy 3-star minimum, and 5-star if your budget allows. A 5-star refrigerator like the LG 322L uses 188 units/year vs 270+ for a 2-star model. At ₹8-10/unit electricity cost, you save ₹650-820/month — that's ₹8,000-10,000/year. Over the refrigerator's 12-year lifespan, a 5-star model saves ₹80,000-1,00,000 in electricity. It always pays off.",
+  },
+  {
+    q: "How long do double door refrigerators last in India?",
+    a: "A well-maintained double door refrigerator with an inverter compressor lasts 12-15 years in India. The compressor is the most critical component — Samsung offers a 20-year compressor warranty and LG/Whirlpool offer 10 years. Clean the condenser coils every 6 months, keep the door seals clean, and don't overload the fridge for maximum lifespan.",
+  },
+];
+---
+
+<Layout title="Double Door Refrigerators — Reviews & Buying Guides | KitchenRank" description="India's best double door refrigerator reviews. Compare Samsung, LG, Whirlpool, Haier by budget — Under ₹25,000, ₹35,000, and ₹50,000. Honest ratings and verified Amazon.in pricing.">
+
+<style>
+  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+  .breadcrumb { font-size: 0.8rem; color: #6b7280; margin-bottom: 20px; }
+  .breadcrumb a { color: #f97316; text-decoration: none; }
+  .breadcrumb span { margin: 0 6px; }
+  .page-badge { display: inline-block; background: #1a2e1a; color: #f97316; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; letter-spacing: 0.1em; margin-bottom: 16px; }
+  h1.page-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; margin-bottom: 16px; }
+  .page-intro { color: #9ca3af; font-size: 1rem; line-height: 1.7; max-width: 750px; margin-bottom: 16px; }
+  .meta-row { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.8rem; color: #6b7280; padding: 12px 16px; background: #111a11; border: 1px solid #1a2e1a; border-radius: 8px; margin-bottom: 48px; }
+  .meta-row strong { color: #e5e7eb; }
+
+  /* SECTION LABEL */
+  .section-label { font-size: 0.7rem; font-weight: 700; color: #f97316; letter-spacing: 0.12em; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .section-label::before { content: ""; display: block; width: 4px; height: 16px; background: #f97316; border-radius: 2px; }
+
+  /* BUDGET CARDS */
+  .budget-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 56px; }
+  .budget-card { background: #111a11; border: 1px solid #1a2e1a; border-radius: 12px; padding: 24px; text-decoration: none; display: block; transition: border-color 0.2s; position: relative; overflow: hidden; }
+  .budget-card:hover { border-color: #f97316; }
+  .budget-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #f97316; }
+  .budget-range { font-size: 1.1rem; font-weight: 900; color: white; margin-bottom: 4px; }
+  .budget-tested { font-size: 0.75rem; color: #6b7280; margin-bottom: 16px; }
+  .budget-top { background: #0f1a0f; border: 1px solid #1a2e1a; border-radius: 8px; padding: 14px; margin-bottom: 14px; }
+  .budget-top-label { font-size: 0.65rem; color: #6b7280; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .budget-top-row { display: flex; align-items: center; justify-content: space-between; }
+  .budget-top-name { font-weight: 700; color: white; font-size: 0.9rem; }
+  .budget-rating { background: #f97316; color: white; font-weight: 900; font-size: 0.9rem; padding: 3px 10px; border-radius: 4px; }
+  .budget-price { color: #f97316; font-weight: 700; font-size: 1rem; margin-top: 6px; }
+  .budget-desc { font-size: 0.82rem; color: #9ca3af; line-height: 1.6; margin-bottom: 16px; }
+  .read-review { font-size: 0.82rem; color: #f97316; font-weight: 700; }
+
+  /* WHAT TO KNOW */
+  .know-section { margin-bottom: 56px; }
+  .know-intro { color: #9ca3af; font-size: 0.9rem; line-height: 1.7; margin-bottom: 24px; max-width: 800px; }
+  .know-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-bottom: 24px; }
+  .know-item { background: #111a11; border: 1px solid #1a2e1a; border-radius: 10px; padding: 18px; }
+  .know-icon { font-size: 1.4rem; margin-bottom: 8px; }
+  .know-title { font-weight: 700; font-size: 0.875rem; color: white; margin-bottom: 6px; }
+  .know-text { font-size: 0.8rem; color: #9ca3af; line-height: 1.6; }
+
+  /* BUDGET TABLE */
+  .budget-table-section { margin-bottom: 56px; }
+  .btable-wrap { background: #111a11; border: 1px solid #1a2e1a; border-radius: 12px; overflow: hidden; }
+  .btable-header { background: #0f1a0f; padding: 16px 20px; display: grid; grid-template-columns: 140px 1fr 1fr 120px; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; color: #6b7280; }
+  .btable-row { padding: 16px 20px; display: grid; grid-template-columns: 140px 1fr 1fr 120px; gap: 16px; border-top: 1px solid #1a2e1a; align-items: center; text-decoration: none; transition: background 0.2s; }
+  .btable-row:hover { background: #0f1a0f; }
+  .btable-budget { font-weight: 700; color: #f97316; font-size: 0.9rem; }
+  .btable-pick { font-size: 0.85rem; color: white; font-weight: 600; }
+  .btable-for { font-size: 0.8rem; color: #9ca3af; }
+  .btable-link { color: #f97316; font-size: 0.8rem; font-weight: 700; }
+  @media(max-width: 700px) {
+    .btable-header { grid-template-columns: 1fr 1fr; }
+    .btable-row { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ALL REVIEWS */
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 56px; }
+  .review-card { background: #111a11; border: 1px solid #1a2e1a; border-radius: 12px; padding: 24px; text-decoration: none; display: block; transition: border-color 0.2s; }
+  .review-card:hover { border-color: #f97316; }
+  .rc-category { font-size: 0.7rem; color: #f97316; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .rc-title { font-weight: 900; font-size: 1rem; color: white; margin-bottom: 12px; line-height: 1.4; }
+  .rc-tested { font-size: 0.75rem; color: #6b7280; margin-bottom: 12px; }
+  .rc-divider { height: 1px; background: #1a2e1a; margin-bottom: 12px; }
+  .rc-label { font-size: 0.7rem; color: #6b7280; }
+  .rc-pick { color: white; font-weight: 700; font-size: 0.875rem; }
+  .rc-price { color: #f97316; font-weight: 700; margin-top: 4px; }
+  .rc-updated { font-size: 0.7rem; color: #4b5563; margin-top: 12px; }
+
+  /* COMPLETE SETUP */
+  .setup-section { margin-bottom: 56px; }
+  .setup-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+  .setup-item { background: #111a11; border: 1px solid #1a2e1a; border-radius: 10px; padding: 18px; text-decoration: none; display: flex; align-items: center; gap: 14px; transition: border-color 0.2s; }
+  .setup-item:hover { border-color: #f97316; }
+  .setup-icon { font-size: 2rem; }
+  .setup-name { font-weight: 700; color: white; font-size: 0.875rem; margin-bottom: 4px; }
+  .setup-desc { font-size: 0.75rem; color: #6b7280; }
+
+  /* GUIDES */
+  .guides-section { margin-bottom: 56px; }
+  .guides-box { background: #111a11; border: 1px solid #1a2e1a; border-radius: 12px; overflow: hidden; }
+  .guides-title-row { background: #0f1a0f; padding: 14px 20px; display: flex; align-items: center; gap: 8px; }
+  .guides-title { font-size: 0.7rem; font-weight: 700; color: #f97316; letter-spacing: 0.1em; }
+  .guide-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-top: 1px solid #1a2e1a; text-decoration: none; transition: background 0.2s; }
+  .guide-item:hover { background: #0f1a0f; }
+  .guide-arrow { color: #f97316; margin-right: 10px; font-size: 0.8rem; }
+  .guide-name { color: #d1d5db; font-size: 0.875rem; }
+  .guide-read { font-size: 0.75rem; color: #6b7280; }
+
+  /* FAQ */
+  .faq-section { margin-bottom: 48px; }
+  .faq-item { background: #111a11; border: 1px solid #1a2e1a; border-radius: 8px; margin-bottom: 12px; }
+  .faq-q { font-weight: 700; font-size: 0.9rem; padding: 16px 20px; color: #e5e7eb; }
+  .faq-a { font-size: 0.85rem; color: #9ca3af; padding: 0 20px 16px; line-height: 1.7; }
+
+  .affiliate-note { background: #111a11; border: 1px solid #1a2e1a; border-radius: 8px; padding: 14px 18px; font-size: 0.75rem; color: #4b5563; }
+</style>
+
+<div class="page-wrap">
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>/</span>
+    Double Door Refrigerators
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-badge">🧊 CATEGORY HUB</div>
+  <h1 class="page-title">DOUBLE DOOR REFRIGERATORS</h1>
+  <p class="page-intro">
+    From budget frost-free options under ₹25,000 to premium InstaView models under ₹50,000 — find the right refrigerator for your family size, kitchen space, and electricity budget. We test every major brand available in India.
+  </p>
+  <div class="meta-row">
+    <span><strong>3 reviews</strong></span>
+    <span><strong>19+ products tested</strong></span>
+    <span>Updated <strong>June 2026</strong></span>
+  </div>
+
+  <!-- BROWSE BY BUDGET -->
+  <div class="section-label">BROWSE BY BUDGET</div>
+  <div class="budget-grid">
+    {budgetRanges.map(b => (
+      <a href={`/reviews/${b.slug}`} class="budget-card">
+        <div class="budget-range">{b.range}</div>
+        <div class="budget-tested">{b.tested} tested</div>
+        <div class="budget-top">
+          <div class="budget-top-label">TOP PICK</div>
+          <div class="budget-top-row">
+            <div class="budget-top-name">{b.topPick}</div>
+            <div class="budget-rating">{b.rating}</div>
+          </div>
+          <div class="budget-price">{b.price}</div>
+        </div>
+        <div class="budget-desc">{b.description}</div>
+        <div class="read-review">Read Full Review →</div>
+      </a>
+    ))}
+  </div>
+
+  <!-- WHAT TO KNOW -->
+  <div class="know-section">
+    <div class="section-label">WHAT TO KNOW BEFORE BUYING A DOUBLE DOOR REFRIGERATOR</div>
+    <p class="know-intro">
+      A good double door refrigerator gives you separate temperature control for fridge and freezer, significantly better food freshness than single-door models, and frost-free operation so you never manually defrost. In India, you can get excellent double door refrigerators from ₹22,000 to ₹50,000 covering families from 2 to 6+ people.
+    </p>
+    <div class="know-grid">
+      <div class="know-item">
+        <div class="know-icon">⭐</div>
+        <div class="know-title">BEE Star Rating</div>
+        <div class="know-text">5-star models save ₹8,000–10,000/year on electricity vs 2-star. Always go 3-star minimum. The LG 322L at 5-star is the most efficient in India under ₹35,000.</div>
+      </div>
+      <div class="know-item">
+        <div class="know-icon">🔄</div>
+        <div class="know-title">Inverter Compressor</div>
+        <div class="know-text">All double door refrigerators in 2026 should have an inverter compressor. It auto-adjusts speed, saves energy, runs quieter, and lasts longer than conventional compressors.</div>
+      </div>
+      <div class="know-item">
+        <div class="know-icon">📏</div>
+        <div class="know-title">Capacity Guide</div>
+        <div class="know-text">2 people: 250–280L. 3–4 people: 300–360L. 5+ people: 380L+. Don't undersize — you'll feel it within a year when the fridge feels packed every week.</div>
+      </div>
+      <div class="know-item">
+        <div class="know-icon">❄️</div>
+        <div class="know-title">Twin Cooling vs Single Cooling</div>
+        <div class="know-text">Samsung's Twin Cooling uses separate evaporators for fridge and freezer. No odour mixing, better humidity for vegetables, drier freezer. Worth the premium if you store lots of fresh produce.</div>
+      </div>
+      <div class="know-item">
+        <div class="know-icon">🔧</div>
+        <div class="know-title">After-Sales Service</div>
+        <div class="know-text">Samsung and LG have India's best service networks. Whirlpool strong in metros. Haier still improving in Tier-2/3 cities. Check authorised centres in your city before buying.</div>
+      </div>
+      <div class="know-item">
+        <div class="know-icon">🌡️</div>
+        <div class="know-title">Indian Summer Performance</div>
+        <div class="know-text">Indian summers hit 45°C+. Look for compressors rated to operate up to 43°C ambient temperature. Samsung, LG and Whirlpool inverter compressors handle Indian summers well.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO CHOOSE YOUR BUDGET -->
+  <div class="budget-table-section">
+    <div class="section-label">HOW TO CHOOSE YOUR BUDGET</div>
+    <div class="btable-wrap">
+      <div class="btable-header">
+        <div>BUDGET</div>
+        <div>BEST FOR</div>
+        <div>WHAT TO EXPECT</div>
+        <div></div>
+      </div>
+      <a href="/reviews/best-double-door-refrigerator-under-25000-india" class="btable-row">
+        <div class="btable-budget">Under ₹25,000</div>
+        <div class="btable-pick" style="color:#16a34a;">First fridge, rentals, couples</div>
+        <div class="btable-for">Frost-free inverter with 250-270L. Good brands like Haier and Godrej. Basic features, solid cooling.</div>
+        <div class="btable-link">View full review →</div>
+      </a>
+      <a href="/reviews/best-double-door-refrigerator-under-35000-india" class="btable-row">
+        <div class="btable-budget">Under ₹35,000</div>
+        <div class="btable-pick" style="color:#f97316;">Families of 3–4, best all-round</div>
+        <div class="btable-for">320–365L, Twin Cooling, 5-star options, Samsung & LG. The sweet spot of price and performance.</div>
+        <div class="btable-link">View full review →</div>
+      </a>
+      <a href="/reviews/best-double-door-refrigerator-under-50000-india" class="btable-row">
+        <div class="btable-budget">Under ₹50,000</div>
+        <div class="btable-pick" style="color:#f97316;">Large families, premium buyers</div>
+        <div class="btable-for">400L+, InstaView, multi-door, smart connectivity, top-tier energy efficiency.</div>
+        <div class="btable-link">View full review →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ALL REVIEWS -->
+  <div class="section-label">ALL DOUBLE DOOR REFRIGERATOR REVIEWS</div>
+  <div class="reviews-grid">
+    {allReviews.map(r => (
+      <a href={`/reviews/${r.slug}`} class="review-card">
+        <div class="rc-category">🧊 REFRIGERATORS · {r.tested} tested</div>
+        <div class="rc-title">{r.title}</div>
+        <div class="rc-tested">Updated {r.updated}</div>
+        <div class="rc-divider"></div>
+        <div class="rc-label">Top Pick</div>
+        <div class="rc-pick">{r.topPick}</div>
+        <div class="rc-price">{r.price}</div>
+      </a>
+    ))}
+  </div>
+
+  <!-- COMPLETE YOUR KITCHEN -->
+  <div class="setup-section">
+    <div class="section-label">COMPLETE YOUR KITCHEN</div>
+    <div class="setup-grid">
+      <a href="/air-fryers" class="setup-item">
+        <div class="setup-icon">🍟</div>
+        <div>
+          <div class="setup-name">Air Fryers</div>
+          <div class="setup-desc">Pair your fridge with healthy cooking</div>
+        </div>
+      </a>
+      <a href="/mixer-grinders" class="setup-item">
+        <div class="setup-icon">🌀</div>
+        <div>
+          <div class="setup-name">Mixer Grinders</div>
+          <div class="setup-desc">Complete your Indian kitchen setup</div>
+        </div>
+      </a>
+      <a href="/water-purifiers" class="setup-item">
+        <div class="setup-icon">💧</div>
+        <div>
+          <div class="setup-name">Water Purifiers</div>
+          <div class="setup-desc">Clean water to complement fresh food</div>
+        </div>
+      </a>
+      <a href="/induction-cooktops" class="setup-item">
+        <div class="setup-icon">🔥</div>
+        <div>
+          <div class="setup-name">Induction Cooktops</div>
+          <div class="setup-desc">Cook what you store</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- RELATED GUIDES -->
+  <div class="guides-section">
+    <div class="section-label">DOUBLE DOOR REFRIGERATOR GUIDES</div>
+    <div class="guides-box">
+      <div class="guides-title-row">
+        <div class="guides-title">🧊 REFRIGERATOR GUIDES</div>
+      </div>
+      {guides.map(g => (
+        <a href={`/guides/${g.slug}`} class="guide-item">
+          <div>
+            <span class="guide-arrow">→</span>
+            <span class="guide-name">{g.title}</span>
+          </div>
+          <div class="guide-read">{g.read}</div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="section-label">FREQUENTLY ASKED QUESTIONS</div>
+    {faqs.map(f => (
+      <div class="faq-item">
+        <div class="faq-q">{f.q}</div>
+        <div class="faq-a">{f.a}</div>
+      </div>
+    ))}
+  </div>
+
+  <!-- AFFILIATE NOTE -->
+  <div class="affiliate-note">
+    ℹ️ We may earn a commission via Amazon.in affiliate links. Prices shown are indicative — check the retailer for current rates. This doesn't affect our reviews or rankings.
+  </div>
+
+</div>
+</Layout>
